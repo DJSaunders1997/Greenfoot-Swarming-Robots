@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=BoidSuper
+comment0.text=\r\n\ BoidSuper\ is\ a\ parent\ to\ all\ fireflys.\ \r\n\ It\ contains\ methods\ used\ by\ Fireflys.\ \ \r\n\ Hides\ unnessecarily\ complicated\ or\ unintuitive\ code\ from\ the\ Firefly\ class.\r\n\ \r\n\ @author\ David\ Saunders\ \r\n\ @version\ 1.0\ 19.03.2019\r\n
+comment1.params=
+comment1.target=java.util.List\ getBoidNeighbours()
+comment2.params=angleArray
+comment2.target=int\ averageOfAngles(int[])
+comment2.text=\r\n\ Method\ averageOfAngles\r\n\ Used\ only\ for\ boid\ flocking\ algorithm.\r\n\ \r\n\ The\ average\ of\ a\ set\ of\ angles\ cannot\ be\ found\ by\ simpily\ adding\ together\ the\ angles\ and\ dividing\ by\ the\ number\ of\ angles.\r\n\ A\ more\ mathematical\ approach\ is\ needed.\r\n\r\n\ @param\ angleArray\ An\ integer\ array\ with\ every\ item\ being\ an\ angle\ between\ 0\ -\ 359\ \r\n\ @return\ An\ integer\ stating\ the\ average\ angle\ of\ the\ angles\ in\ angleArray\r\n
+comment3.params=
+comment3.target=int\ seperation()
+comment3.text=\r\n\ Method\ seperation\r\n\ Maintains\ distance\ between\ this\ boid\ and\ nearby\ neighbours.\r\n\r\n\ @return\ The\ heading\ needed\ to\ move\ away\ from\ other\ neighbours.\r\n
+comment4.params=
+comment4.target=int\ alignment()
+comment4.text=\r\n\ Method\ alignment\r\n\ Maintain\ firection\ of\ flock\r\n\r\n\ @return\ The\ heading\ that\ is\ the\ average\ of\ the\ neighbours\ heading.\r\n
+comment5.params=
+comment5.target=int\ cohesion()
+comment5.text=\r\n\ Method\ cohesion\r\n\ Maintane\ cohesion\ of\ flock\ by\ attracting\ this\ boid\ to\ the\ "Centre\ Of\ Mass"\ of\ neighbours.\r\n\r\n\ @return\ The\ heading\ towards\ the\ centre\ of\ the\ neighbours.\r\n
+numComments=6
