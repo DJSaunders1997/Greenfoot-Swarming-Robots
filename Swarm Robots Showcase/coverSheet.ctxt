@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=coverSheet
+comment0.text=\r\n\ The\ cover\ sheet\ that\ gives\ instructions\ on\ how\ to\ launch\ example\ swarm\ simulations\r\n\ \r\n\ @author\ David\ Saunders\ \r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=coverSheet()
+numComments=2

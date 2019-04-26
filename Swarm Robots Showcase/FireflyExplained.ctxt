@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=FireflyExplained
+comment0.text=\r\n\ A\ FireflyExplained\ object,\ subclass\ of\ the\ FireflySuper\ class.\r\n\ FireflySuper\ super\ class\ hides\ some\ complexity\ that\ is\ unnessecarily\ complicated.\r\n\ Follow\ the\ rules\ of\ the\ firefly\ synchronisation\ algorithm.\r\n\ \r\n\ FireflyExplained\ has\ labels\ that\ show\ the\ internal\ clock\ of\ each\ firefly.\r\n\ This\ is\ useful\ to\ visualising\ how\ the\ algorithm\ works.\r\n\ \r\n\ Pseudo-code\:\r\n\ Count\ from\ 1\ to\ 12\ repeatedly\ in\ a\ cycle\r\n\ When\ the\ clock\ equals\ 12\ flash\ and\ reset\ clock\r\n\ If\ a\ fly\ is\ not\ flashing\ but\ detects\ another\ fireflys\ flash\r\n\ \ increase\ clock\ by\ 1\r\n\ \r\n\ @author\ David\ Saunders\ \r\n\ @version\ 1.0\ 19.03.2019\r\n
+comment1.params=
+comment1.target=FireflyExplained()
+comment1.text=\r\n\ Firefly\ Constructor\ \r\n\ Assigns\ the\ fireflys\ clock\ to\ a\ random\ amount.\r\n\ Gives\ each\ fly\ its\ own\ unique\ number.\r\n
+comment2.params=world
+comment2.target=void\ addedToWorld(greenfoot.World)
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Method\ act\ \r\n\ All\ important\ firefly\ behaviour\ is\ contained\ within\ this\ method.\r\n\ Firstly\ a\ firefly\ must\ move,\ and\ then\ consider\ the\ logic\ for\ flashing.\ \r\n\ The\ algorithm\ is\ implemented\ in\ a\ single\ if\ else\ statement.\ \ \ \ \ \ \r\n
+numComments=4

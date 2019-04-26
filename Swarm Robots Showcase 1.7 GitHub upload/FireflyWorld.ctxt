@@ -1,6 +1,0 @@
-#BlueJ class context
-comment0.target=FireflyWorld
-comment0.text=\r\n\ A\ world\ that\ populates\ the\ screen\ with\ Fireflys\ with\ random\ location\ and\ initial\ direction.\r\n\ Choose\ between\ populating\ with\ Firefly's\ or\ FireflyExplained's\r\n\ \r\n\ @author\ David\ Saunders\ \r\n\ @version\ 1.0\ 19.03.2019\r\n
-comment1.params=
-comment1.target=FireflyWorld()
-numComments=2

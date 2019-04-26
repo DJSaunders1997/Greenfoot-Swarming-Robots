@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=BoidExplained
+comment0.text=\r\n\ A\ Boid\ object,\ subclass\ of\ the\ SwarmRobot\ class\r\n\ Based\ on\ algorithms\ described\ by\ Reynolds\r\n\ BoidWithArrows\ shows\ the\ direction\ the\ rules\ make\ the\ boid\ turn\r\n\ \r\n\ Seperation\ is\ shown\ with\ a\ green\ arrow\r\n\ Cohesion\ is\ shown\ with\ a\ red\ arrow\r\n\ Alignment\ is\ shown\ with\ a\ blue\ arrow\r\n\ \r\n\ @author\ David\ Saunders\ \r\n\ @version\ 1.0\ 19.03.2019\r\n
+comment1.params=
+comment1.target=BoidExplained()
+comment1.text=\r\n\ Boid\ Constructor\r\n\ No\ parameters\ needed\ to\ be\ passed\ with\ the\ constructor.\ \ \r\n
+comment2.params=world
+comment2.target=void\ addedToWorld(greenfoot.World)
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Method\ act\r\n\ Is\ mainly\ used\ to\ call\ the\ 3\ rules\ of\ seperation,\ alignment,\ and\ cohesion.\r\n\ Firstly\ a\ boid\ must\ move,\ then\ consider\ the\ rules\ for\ flocking.\ \r\n\ Each\ rule\ is\ a\ fuction\ that\ returns\ a\ new\ heading,\ this\ is\ multiplied\ by\ the\ weight\ for\ that\ rule.\r\n\ The\ result\ of\ every\ rule\ times\ the\ weight\ is\ then\ put\ into\ an\ array,\ from\ which\ the\ average\ heading\ can\ be\ calculated.\r\n\ From\ the\ average\ heading\ determine\ which\ direction\ the\ boid\ should\ turn,\ then\ turn\ it\ turnAmount\ in\ that\ direction.\r\n
+comment4.params=
+comment4.target=int\ newSeperation()
+numComments=5
