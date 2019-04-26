@@ -58,7 +58,7 @@ public class FireflyExplained extends FireflySuper
         currentClock++;
         
         //flashing
-        if(currentClock >= maxClockValue)    //
+        if(currentClock >= maxClockValue) 
         {
             //now flash
             setImage("fireflyFlash.png");   //make fly flash
@@ -85,14 +85,6 @@ public class FireflyExplained extends FireflySuper
                 
             //colour label
             lbl.setFillColor(Color.WHITE);
-            
-            /*
-            //ensure the clock value is never greater than 12
-            if (currentClock > maxClockValue) 
-            {
-                currentClock = maxClockValue;
-            }
-            */
         }
         
         //update label value and position

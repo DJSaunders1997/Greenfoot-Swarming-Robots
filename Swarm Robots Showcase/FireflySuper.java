@@ -43,7 +43,7 @@ public class FireflySuper extends SwarmRobot
      */
     public boolean neighboutFlyFlashing()
     {        
-        List <FireflySuper> neighbours = getListOfNeighbours(FireflySuper.class);     
+        List <FireflySuper> neighbours = getListOfNeighbours(FireflySuper.class, 1000);     
 
         //check if neighbours are flashing
         for ( FireflySuper neighbourFly : neighbours) 

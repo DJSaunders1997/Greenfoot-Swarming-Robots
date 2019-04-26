@@ -16,7 +16,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Firefly extends FireflySuper
 {
-    static int numberOfFireflys = 0;
 
     /**
      * Firefly Constructor 
@@ -27,12 +26,6 @@ public class Firefly extends FireflySuper
     {
         maxClockValue = 12;   
         currentClock = Greenfoot.getRandomNumber(maxClockValue) + 1;
-        
-        //Used to keep track of what number each firefly is.
-        //Needed to fix concurrency issue.
-        robotNumber = numberOfFireflys;
-        numberOfFireflys++;
-                          
     }
     
     /**
@@ -47,9 +40,8 @@ public class Firefly extends FireflySuper
 
         //decide between bounceOffEdge and loopThroughEdge
         bounceOffEdge();    //method from Swarm Robot superclass
-
-        //flashing
-        if(currentClock >= maxClockValue)
+        
+        if(currentClock >= maxClockValue)   //flashing
         {
             //now flash
             setImage("fireflyFlash.png");   //make fly flash
@@ -57,9 +49,8 @@ public class Firefly extends FireflySuper
             currentClock = 1;   //reset clock. Lowest value is 1 with the clock analogy.
 
             Greenfoot.playSound("ping.mp3");//play sound (optional)
-        }
-        //not flashing
-        else    
+        }        
+        else    //not flashing
         {
             //if a neighbour fly is flashing
             if(neighboutFlyFlashing() == true) 
@@ -69,12 +60,6 @@ public class Firefly extends FireflySuper
 
             setImage("firefly.png");    //make fly unflash
             currentClock++;
-
-            //ensure the clock value is never greater than 12
-            if (currentClock > maxClockValue) 
-            {
-                currentClock = maxClockValue;
-            }
         }
         
     }

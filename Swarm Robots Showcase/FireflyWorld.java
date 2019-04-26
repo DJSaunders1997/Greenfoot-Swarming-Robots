@@ -9,13 +9,11 @@
  */
 public class FireflyWorld extends World
 {
-    int numOfFireflies = 10;
+    int numOfFireflies = 50;
     
     public FireflyWorld()
     {    
         super(1200, 800, 1); 
-        
-        
         
         for(int i = 0; i < numOfFireflies; i++) 
         {
@@ -26,7 +24,7 @@ public class FireflyWorld extends World
             //Change the object type to either Firefly or FireflyExplained 
             
             //Firefly fly = new Firefly();
-            Firefly fly = new Firefly();
+            FireflyExplained fly = new FireflyExplained();
                         
             addObject(fly, x, y); 
                         

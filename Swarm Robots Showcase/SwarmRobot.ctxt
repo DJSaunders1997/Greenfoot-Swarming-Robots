@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=SwarmRobot
 comment0.text=\r\n\ SwarmRobot\ is\ a\ parent\ to\ all\ swarm\ robots.\ \r\n\ It\ contains\ methods\ used\ by\ both\ Boids\ and\ Fireflys.\ \ \r\n\ \r\n\ @author\ David\ Saunders\ \r\n\ @version\ 1.0\ 19.03.2019\r\n
-comment1.params=c
-comment1.target=java.util.List\ getListOfNeighbours(java.lang.Class)
+comment1.params=c\ visionDistance
+comment1.target=java.util.List\ getListOfNeighbours(java.lang.Class,\ int)
 comment1.text=\r\n\ Method\ getListOfNeighbours\r\n\ Used\ by\ fireflys\ and\ boids.\r\n\ Looks\ for\ actors\ of\ class\ c\r\n\ Creates\ a\ list\ of\ objects\ with\ class\ c,\ in\ radious\ visionDistance.\ These\ are\ the\ neighbours.\r\n\r\n\ @param\ c\ What\ class\ of\ actors\ should\ be\ counted\ as\ neighbours.\r\n\ @return\ A\ list\ of\ neighbours\ within\ distance\ visionDistance.\ \r\n
 comment2.params=
 comment2.target=void\ bounceOffEdge()
