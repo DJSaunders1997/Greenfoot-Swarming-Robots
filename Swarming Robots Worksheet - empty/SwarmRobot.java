@@ -10,9 +10,6 @@ import java.util.List;
  */
 public class SwarmRobot extends Actor
 {
-    int visionDistance = 1000;   //the distance around the robot that it can see other robots 
-    //100 is ideal for Boids
-    //300 is ideal for Fireflys
     
     /**
      * Method getListOfNeighbours
@@ -23,7 +20,7 @@ public class SwarmRobot extends Actor
      * @param c What class of actors should be counted as neighbours.
      * @return A list of neighbours within distance visionDistance. 
      */
-    public <A> java.util.List <A> getListOfNeighbours (Class c)//java.lang.Class<A> cls)
+    public <A> java.util.List <A> getListOfNeighbours (Class c, int visionDistance)
     {        
         List<A> neighbours;
         neighbours = getNeighbours(visionDistance, true, c);

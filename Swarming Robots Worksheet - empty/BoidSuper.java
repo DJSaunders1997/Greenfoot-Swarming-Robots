@@ -10,15 +10,20 @@ import java.util.List;
  * @version 1.0 19.03.2019
  */
 public class BoidSuper extends SwarmRobot
-{
-    
+{    
     List<BoidSuper> neighbours;
-        
-    //returns any objects which have BoidSuper as a superclass
-    //hides another level of abstraction from the boid class
-    public List<BoidSuper> getBoidNeighbours()
+    
+    /**
+     * Method getBoidNeighbours
+     * Gets a list of neighbour boids.
+     * Hides another level of abstraction from the boid class.
+     *
+     * @param visionDistance A parameter
+     * @return A list of objects which have BoidSuper as a superclass
+     */
+    public List<BoidSuper> getBoidNeighbours(int visionDistance)
     {
-        return getListOfNeighbours(BoidSuper.class);    //called from the swarm robot superclass
+        return getListOfNeighbours(BoidSuper.class, visionDistance);    //called from the swarm robot superclass
     }
 
     
@@ -55,42 +60,50 @@ public class BoidSuper extends SwarmRobot
 
         return aveRotation;   
     }
-    
+        
     /**
      * Method seperation
      * Maintains distance between this boid and nearby neighbours.
      *
+     * @param seperationDistance the smaller radius a boid will look for seperations neighbours. 
      * @return The heading needed to move away from other neighbours.
      */
-    protected int seperation() 
+    public int seperation(int seperationDistance) 
     {
-        //initilise x and y
-        //x and y will be the "centre of mass" of the local boids
-        int x=0;
-        int y=0;
-        
-        //add the x and y coordinates of the neighbour boids
-        for ( BoidSuper b: neighbours) 
-        {  
-            x = x + b.getX();
-            y = y + b.getY();
+
+        List<BoidSuper> sepNeighbours;
+        sepNeighbours = getBoidNeighbours(seperationDistance);
+
+        if(sepNeighbours.size() != 0)
+        {            
+            //initilise x and y
+            //x and y will be the "centre of mass" (COM) of the local boids
+            int x=0;
+            int y=0;
+
+            //add the x and y coordinates of the neighbour boids
+            for ( BoidSuper b: sepNeighbours) 
+            {  
+                x = x + b.getX();
+                y = y + b.getY();
+            }
+            
+            //calculate COM
+            int xAverage = x / (sepNeighbours.size());
+            int yAverage = y / (sepNeighbours.size());
+
+            int curRot = getRotation();            
+            turnTowards(xAverage, yAverage);    //faceCOM             
+            turn(180);  //face opposite of COM
+            move(1);            
+            int newRot = getRotation(); //Save this new angle            
+            setRotation(curRot);    //return boid facing normal direction
+            
+            return newRot;
+        } 
+        else {
+           return getRotation(); 
         }
-
-        //no +1 as neighbours excluding this boid
-        int xAverage = x / (neighbours.size());
-        int yAverage = y / (neighbours.size());
-
-        int curRot = getRotation();
-        //faceCOM
-        turnTowards(xAverage, yAverage);
-        //face opposite of COM
-        turn(180);
-        //Save this new angle
-        int newRot = getRotation();
-        //return boid facing normal direction
-        setRotation(curRot);
-
-        return newRot;
     }
 
     /**
@@ -155,5 +168,36 @@ public class BoidSuper extends SwarmRobot
 
         return newRot;
     }    
+    
+    /**
+     * Method turnSlightly
+     * Turns a boid towards a new direction.
+     * Will turn the shortest way towards the new angle.
+     *
+     * @param newAngle The angle the boid shall turn towards.
+     * @param turnAmount A parameter how much a boid shall turn
+     */
+    public void turnSlightly(int newAngle) 
+    {       
+        int currentAngle = getRotation();
+
+        if (currentAngle != newAngle)
+        {
+
+            int clockwiseDifference = Math.floorMod (newAngle-currentAngle, 360);
+            int counterclockwiseDifference = Math.floorMod (currentAngle-newAngle, 360);
+
+            int min = Math.min(clockwiseDifference, counterclockwiseDifference);
+
+            if (min == clockwiseDifference)    //turning clockwise is the shortest angular distance
+            {
+                turn(1);
+            }
+            else                //turning counter-clockwise is the shortest angular distance
+            {
+                turn(-1);
+            }        
+        }
+    }
     
 }

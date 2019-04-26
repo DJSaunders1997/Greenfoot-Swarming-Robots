@@ -10,8 +10,8 @@ import java.util.List;
  * @version 1.0 19.03.2019
  */
 public class FireflySuper extends SwarmRobot
-{
-    static int numberOfFireflys = 0;
+{    
+    static int numberOfFireflys = 0;    
     
     protected int maxClockValue;    
     protected int currentClock;
@@ -41,9 +41,9 @@ public class FireflySuper extends SwarmRobot
      *  The first firefly created will have a 
      * @return Boolean returns true only if there are neighbour fireflys flashing
      */
-    public boolean neighboutFlyFlashing()
+    public boolean neighboutFlyFlashing(int visionDistance)
     {        
-        List <FireflySuper> neighbours = getListOfNeighbours(FireflySuper.class, 1000);     
+        List <FireflySuper> neighbours = getListOfNeighbours(FireflySuper.class, visionDistance);     
 
         //check if neighbours are flashing
         for ( FireflySuper neighbourFly : neighbours) 

@@ -19,7 +19,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FireflyExplained extends FireflySuper
 {
-    static int numberOfFireflys = 0;
     Label lbl;
 
     /**
@@ -74,7 +73,7 @@ public class FireflyExplained extends FireflySuper
         else    
         {
             //if a neighbour fly is flashing
-            if(neighboutFlyFlashing() == true) 
+            if(neighboutFlyFlashing(1000) == true) 
             {
                 currentClock++;
             }

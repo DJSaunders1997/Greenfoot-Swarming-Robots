@@ -11,12 +11,27 @@ import java.util.List;
  */
 public class FireflySuper extends SwarmRobot
 {
+    int visionDistance = 1000;
+        
+    static int numberOfFireflys = 0;    
     protected int maxClockValue;    
     protected int currentClock;
     protected int robotNumber;    //used only for firefly synchronisation algorithm.     
     //gives each robot a unique number that specifies when it was created in relation to other robot.
     //needed for checkOrder()
 
+    /**
+     * Firefly Constructor 
+     * Gives each fly its own unique number.
+     */
+    public FireflySuper()
+    {
+        //Used to keep track of what number each firefly is.
+        //Needed to fix concurrency issue.
+        robotNumber = numberOfFireflys;
+        numberOfFireflys++;                              
+    }
+    
     /**
      * Method neighbourFlyFlashing
      * Used only for firefly synchronisation algorithm.
@@ -27,9 +42,9 @@ public class FireflySuper extends SwarmRobot
      *  The first firefly created will have a 
      * @return Boolean returns true only if there are neighbour fireflys flashing
      */
-    public boolean neighbourFlyFlashing()
+    public boolean neighboutFlyFlashing()
     {        
-        List <FireflySuper> neighbours = getListOfNeighbours(FireflySuper.class);     
+        List <FireflySuper> neighbours = getListOfNeighbours(FireflySuper.class, visionDistance);     
 
         //check if neighbours are flashing
         for ( FireflySuper neighbourFly : neighbours) 
@@ -73,9 +88,6 @@ public class FireflySuper extends SwarmRobot
         //The neighbour flys clock value, accounting for its location in the cycle
         //set to the neighbour flys clock value so it can be adjusted later
         int neighbourClock = neighbourFly.currentClock;
-
-        //System.out.println("Neighbour Current Clock: "+ neighbourFly.currentClock);
-        //System.out.println("Neighbour robot number: "+ neighbourFly.robotNumber);
 
         //If this fly flashes BEFORE the neighbour fly
         if(robotNumber < neighbourFly.robotNumber) 
