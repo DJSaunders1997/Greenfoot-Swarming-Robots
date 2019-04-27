@@ -59,12 +59,14 @@ public class FireflyExplained extends FireflySuper
         //flashing
         if(currentClock >= maxClockValue) 
         {
+            Greenfoot.playSound("ping.mp3");//play sound (optional)
+            
             //now flash
             setImage("fireflyFlash.png");   //make fly flash
 
             currentClock = 1;   //reset clock. Lowest value is 1 with the clock analogy.
 
-            Greenfoot.playSound("ping.mp3");//play sound (optional)
+            
 
             //colour label
             lbl.setFillColor(Color.RED);

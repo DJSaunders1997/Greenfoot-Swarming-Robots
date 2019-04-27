@@ -7,7 +7,7 @@ import java.util.List;
  * Hides unnessecarily complicated or unintuitive code from the Firefly class.
  * 
  * @author David Saunders 
- * @version 1.0 19.03.2019
+ * @version 1.0 15.04.2019
  */
 public class BoidSuper extends SwarmRobot
 {    

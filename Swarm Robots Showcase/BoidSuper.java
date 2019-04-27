@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
+import com.google.common.math.IntMath; 
 
 /**
  * BoidSuper is a parent to all fireflys. 
@@ -184,9 +185,13 @@ public class BoidSuper extends SwarmRobot
         if (currentAngle != newAngle)
         {
 
-            int clockwiseDifference = Math.floorMod (newAngle-currentAngle, 360);
-            int counterclockwiseDifference = Math.floorMod (currentAngle-newAngle, 360);
-
+            //In Java % is remainder not modulo. 
+            //Originally used Math.floorMod for modulo but it is not supported on the Greenfoot website
+            //Used IntMath.mod instead but an import was needed.
+            
+            int clockwiseDifference = IntMath.mod(newAngle-currentAngle, 360);
+            int counterclockwiseDifference = IntMath.mod(currentAngle-newAngle, 360);
+            
             int min = Math.min(clockwiseDifference, counterclockwiseDifference);
 
             if (min == clockwiseDifference)    //turning clockwise is the shortest angular distance

@@ -65,7 +65,7 @@ public class BoidExplained extends BoidSuper
         alignmentArrow.setLocation(getX(),getY());
         cohesionArrow.setLocation(getX(),getY());
         
-        neighbours = getBoidNeighbours(100);
+        neighbours = getBoidNeighbours(150);
         
         //Don't look for neighbours if there arn't any!
         if (neighbours.size() == 0)

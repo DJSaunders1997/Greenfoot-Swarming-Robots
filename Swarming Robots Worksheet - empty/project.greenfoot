@@ -67,5 +67,5 @@ target6.y=0
 version=3.0.0
 width=1938
 world.lastInstantiated=MyWorld
-xPosition=-9
-yPosition=-9
+xPosition=0
+yPosition=0
