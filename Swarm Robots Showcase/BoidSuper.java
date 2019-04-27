@@ -1,6 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
-import com.google.common.math.IntMath; 
 
 /**
  * BoidSuper is a parent to all fireflys. 
@@ -26,7 +25,6 @@ public class BoidSuper extends SwarmRobot
     {
         return getListOfNeighbours(BoidSuper.class, visionDistance);    //called from the swarm robot superclass
     }
-
     
     /**
      * Method averageOfAngles
@@ -71,7 +69,6 @@ public class BoidSuper extends SwarmRobot
      */
     public int seperation(int seperationDistance) 
     {
-
         List<BoidSuper> sepNeighbours;
         sepNeighbours = getBoidNeighbours(seperationDistance);
 
@@ -184,13 +181,17 @@ public class BoidSuper extends SwarmRobot
 
         if (currentAngle != newAngle)
         {
-
-            //In Java % is remainder not modulo. 
-            //Originally used Math.floorMod for modulo but it is not supported on the Greenfoot website
-            //Used IntMath.mod instead but an import was needed.
+            /*
+            In Java % is remainder not modulo. 
+            Originally used Math.floorMod then IntMath.mod for modulo but it is not supported on the Greenfoot website            
+            The formula
+                (a % b + b) % b
+            will perform modulo correctly with negitive numbers
+            https://stackoverflow.com/questions/4412179/best-way-to-make-javas-modulus-behave-like-it-should-with-negative-numbers/25830153#25830153
+            */
             
-            int clockwiseDifference = IntMath.mod(newAngle-currentAngle, 360);
-            int counterclockwiseDifference = IntMath.mod(currentAngle-newAngle, 360);
+            int clockwiseDifference = (newAngle-currentAngle % 360 + 360) % 360;        //does newAngle-currentAngle modulo 360
+            int counterclockwiseDifference = (currentAngle-newAngle % 360 + 360) % 360; //performs currentAngle - newAngle modulo 360
             
             int min = Math.min(clockwiseDifference, counterclockwiseDifference);
 
