@@ -7,7 +7,7 @@ import java.util.List;
  * Hides unnessecarily complicated or unintuitive code from the Firefly class.
  * 
  * @author David Saunders 
- * @version 1.0 15.04.2019
+ * @version 1.0 25.04.2019
  */
 public class BoidSuper extends SwarmRobot
 {    
@@ -25,7 +25,6 @@ public class BoidSuper extends SwarmRobot
     {
         return getListOfNeighbours(BoidSuper.class, visionDistance);    //called from the swarm robot superclass
     }
-
     
     /**
      * Method averageOfAngles
@@ -70,7 +69,6 @@ public class BoidSuper extends SwarmRobot
      */
     public int seperation(int seperationDistance) 
     {
-
         List<BoidSuper> sepNeighbours;
         sepNeighbours = getBoidNeighbours(seperationDistance);
 
@@ -183,10 +181,18 @@ public class BoidSuper extends SwarmRobot
 
         if (currentAngle != newAngle)
         {
-
-            int clockwiseDifference = Math.floorMod (newAngle-currentAngle, 360);
-            int counterclockwiseDifference = Math.floorMod (currentAngle-newAngle, 360);
-
+            /*
+            In Java % is remainder not modulo. 
+            Originally used Math.floorMod then IntMath.mod for modulo but it is not supported on the Greenfoot website            
+            The formula
+                (a % b + b) % b
+            will perform modulo correctly with negitive numbers
+            https://stackoverflow.com/questions/4412179/best-way-to-make-javas-modulus-behave-like-it-should-with-negative-numbers/25830153#25830153
+            */
+            
+            int clockwiseDifference = (newAngle-currentAngle % 360 + 360) % 360;        //does newAngle-currentAngle modulo 360
+            int counterclockwiseDifference = (currentAngle-newAngle % 360 + 360) % 360; //performs currentAngle - newAngle modulo 360
+            
             int min = Math.min(clockwiseDifference, counterclockwiseDifference);
 
             if (min == clockwiseDifference)    //turning clockwise is the shortest angular distance
