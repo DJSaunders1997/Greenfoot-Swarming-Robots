@@ -66,8 +66,6 @@ public class FireflyExplained extends FireflySuper
 
             currentClock = 1;   //reset clock. Lowest value is 1 with the clock analogy.
 
-            
-
             //colour label
             lbl.setFillColor(Color.RED);
         }
@@ -75,7 +73,7 @@ public class FireflyExplained extends FireflySuper
         else    
         {
             //if a neighbour fly is flashing
-            if(neighboutFlyFlashing(1000) == true) 
+            if(neighbourFlyFlashing(1000) == true) 
             {
                 currentClock++;
             }

@@ -4,7 +4,7 @@ public class Firefly extends FireflySuper
 {
     public Firefly()
     {                 
-         maxClockValue = 10;
+         maxClockValue = 0;
          currentClock = 0;
     }
 

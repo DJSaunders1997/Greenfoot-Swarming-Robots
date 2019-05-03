@@ -53,7 +53,7 @@ public class Firefly extends FireflySuper
         else    //not flashing
         {
             //if a neighbour fly is flashing
-            if(neighboutFlyFlashing(1000) == true) 
+            if(neighbourFlyFlashing(1000) == true) 
             {
                 currentClock++;
             }
