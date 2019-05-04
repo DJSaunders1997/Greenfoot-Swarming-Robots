@@ -69,7 +69,8 @@ public class FireflySuper extends SwarmRobot
      * Suppose there are 2 fireflys A and B, where A was created before B
      * At the start of the Act cycle A is flashing so B should increment its clock
      * A runs first, then resets its clock and is now no longer flashing
-     * B looks at its neighbour A, if code for both fireflys was executed simultaneously then B would see A flash B would increments its clock
+     * B looks at its neighbour A, if code for both fireflys was executed simultaneously then B would
+     * see A flash B would increments its clock.
      * Instead B sees a neighbour that is not flashing so does not change its clock.
      *
      * To fix this issue each firefly has a unique number that specifies what number firefly it is.

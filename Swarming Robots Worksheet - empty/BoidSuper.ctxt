@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=BoidSuper
-comment0.text=\r\n\ BoidSuper\ is\ a\ parent\ to\ all\ fireflys.\ \r\n\ It\ contains\ methods\ used\ by\ Fireflys.\ \ \r\n\ Hides\ unnessecarily\ complicated\ or\ unintuitive\ code\ from\ the\ Firefly\ class.\r\n\ \r\n\ @author\ David\ Saunders\ \r\n\ @version\ 1.0\ 25.04.2019\r\n
+comment0.text=\r\n\ BoidSuper\ is\ a\ parent\ to\ all\ fireflys.\ \r\n\ It\ contains\ methods\ used\ by\ Fireflys.\ \ \r\n\ Hides\ unnessecarily\ complicated\ or\ unintuitive\ code\ from\ the\ Firefly\ class.\r\n\ \r\n\ @author\ David\ Saunders\ \r\n\ @version\ 1.0\ 15.04.2019\r\n
 comment1.params=visionDistance
 comment1.target=java.util.List\ getBoidNeighbours(int)
 comment1.text=\r\n\ Method\ getBoidNeighbours\r\n\ Gets\ a\ list\ of\ neighbour\ boids.\r\n\ Hides\ another\ level\ of\ abstraction\ from\ the\ boid\ class.\r\n\r\n\ @param\ visionDistance\ A\ parameter\r\n\ @return\ A\ list\ of\ objects\ which\ have\ BoidSuper\ as\ a\ superclass\r\n
