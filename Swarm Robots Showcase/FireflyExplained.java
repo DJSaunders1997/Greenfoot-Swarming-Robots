@@ -28,7 +28,9 @@ public class FireflyExplained extends FireflySuper
      */
     public FireflyExplained()
     {
-        maxClockValue = 12;   
+        maxClockValue = 11;   
+        //First firefly will go up to 5 then 1 and flash
+        //seond firefly will go from 4 to 1 and flash 
         currentClock = Greenfoot.getRandomNumber(maxClockValue) + 1;
                       
         lbl = new Label(currentClock, 30);  //30 is for size
@@ -57,7 +59,7 @@ public class FireflyExplained extends FireflySuper
         currentClock++;
         
         //flashing
-        if(currentClock >= maxClockValue) 
+        if(currentClock > maxClockValue) 
         {
             Greenfoot.playSound("ping.mp3");//play sound (optional)
             

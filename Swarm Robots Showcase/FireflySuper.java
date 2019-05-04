@@ -14,7 +14,7 @@ public class FireflySuper extends SwarmRobot
     static int numberOfFireflys = 0;    
     
     protected int maxClockValue;    
-    protected int currentClock;
+    protected int currentClock;   
     protected int robotNumber;    //used only for firefly synchronisation algorithm.     
     //gives each robot a unique number that specifies when it was created in relation to other robot.
     //needed for checkOrder()
@@ -95,11 +95,19 @@ public class FireflySuper extends SwarmRobot
             //So the neighbour fly hasnt had chance to update its clock yet so this fixes it
             neighbourClock += 1;
         }
+        
+        /*
+        else if (robotNumber == 1) //else if robot has highest number then dont change anything??
+        {
+            neighbourClock = neighbourClock;
+        }
+        */
+        
         //If this fly flashes AFTER the neighbour fly
         else if(robotNumber > neighbourFly.robotNumber) 
         {
             neighbourClock -= 1;
-        }
+        }   
 
         //This is standard "increase clock if neighbour fly is flashing"
         if(neighbourClock >= maxClockValue) 

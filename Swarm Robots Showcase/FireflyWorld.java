@@ -9,7 +9,7 @@
  */
 public class FireflyWorld extends World
 {
-    int numOfFireflies = 50;
+    int numOfFireflies = 10;
     
     public FireflyWorld()
     {    
