@@ -27,7 +27,7 @@ public class Firefly extends FireflySuper
         maxClockValue = 12;   
         currentClock = Greenfoot.getRandomNumber(maxClockValue) + 1;
     }
-    
+
     /**
      * Method act 
      * All important firefly behaviour is contained within this method.
@@ -40,10 +40,11 @@ public class Firefly extends FireflySuper
 
         //decide between bounceOffEdge and loopThroughEdge
         bounceOffEdge();    //method from Swarm Robot superclass
-        
-        if(currentClock >= maxClockValue)   //flashing
+
+        currentClock++;
+
+        if(currentClock > maxClockValue)   //flashing
         {
-            //now flash
             setImage("fireflyFlash.png");   //make fly flash
 
             currentClock = 1;   //reset clock. Lowest value is 1 with the clock analogy.
@@ -53,14 +54,13 @@ public class Firefly extends FireflySuper
         else    //not flashing
         {
             //if a neighbour fly is flashing
-            if(neighbourFlyFlashing(1000) == true) 
+            if(neighboutFlyFlashing(1000) == true) 
             {
                 currentClock++;
             }
 
             setImage("firefly.png");    //make fly unflash
-            currentClock++;
         }
-        
+
     }
 }

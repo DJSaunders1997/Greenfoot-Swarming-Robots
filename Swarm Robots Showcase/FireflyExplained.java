@@ -28,11 +28,9 @@ public class FireflyExplained extends FireflySuper
      */
     public FireflyExplained()
     {
-        maxClockValue = 11;   
-        //First firefly will go up to 5 then 1 and flash
-        //seond firefly will go from 4 to 1 and flash 
+        maxClockValue = 12;    
         currentClock = Greenfoot.getRandomNumber(maxClockValue) + 1;
-                      
+
         lbl = new Label(currentClock, 30);  //30 is for size
     }
 
@@ -40,9 +38,9 @@ public class FireflyExplained extends FireflySuper
     {
         //add label on top of firefly only once firefly has been added to the this world
         getWorld().addObject(lbl, getX(), getY());
-        
+
     }
-    
+
     /**
      * Method act 
      * All important firefly behaviour is contained within this method.
@@ -55,19 +53,17 @@ public class FireflyExplained extends FireflySuper
 
         //decide between bounceOffEdge and loopThroughEdge
         bounceOffEdge();    //method from Swarm Robot superclass
-        
+
         currentClock++;
         
-        //flashing
-        if(currentClock > maxClockValue) 
+        if(currentClock > maxClockValue) //flashing
         {
-            Greenfoot.playSound("ping.mp3");//play sound (optional)
-            
-            //now flash
             setImage("fireflyFlash.png");   //make fly flash
 
             currentClock = 1;   //reset clock. Lowest value is 1 with the clock analogy.
-
+            
+            Greenfoot.playSound("ping.mp3");//play sound (optional)
+            
             //colour label
             lbl.setFillColor(Color.RED);
         }
@@ -75,19 +71,22 @@ public class FireflyExplained extends FireflySuper
         else    
         {
             //if a neighbour fly is flashing
-            if(neighbourFlyFlashing(1000) == true) 
+            if(neighboutFlyFlashing(1000) == true) 
             {
                 currentClock++;
             }
-            
-            //currentClock++;
-            
+
             setImage("firefly.png");    //make fly unflash
-                
+
             //colour label
             lbl.setFillColor(Color.WHITE);
         }
-        
+
+        //ensure that a number greater than maxClockValue is never shown
+        if (currentClock>maxClockValue) 
+        {
+            currentClock = maxClockValue;   
+        }
         //update label value and position
         lbl.setValue(currentClock);
         lbl.setLocation(getX(), getY() );

@@ -41,7 +41,7 @@ public class FireflySuper extends SwarmRobot
      *  The first firefly created will have a 
      * @return Boolean returns true only if there are neighbour fireflys flashing
      */
-    public boolean neighbourFlyFlashing(int visionDistance)
+    public boolean neighboutFlyFlashing(int visionDistance)
     {        
         List <FireflySuper> neighbours = getListOfNeighbours(FireflySuper.class, visionDistance);     
 
@@ -95,14 +95,7 @@ public class FireflySuper extends SwarmRobot
             //So the neighbour fly hasnt had chance to update its clock yet so this fixes it
             neighbourClock += 1;
         }
-        
-        /*
-        else if (robotNumber == 1) //else if robot has highest number then dont change anything??
-        {
-            neighbourClock = neighbourClock;
-        }
-        */
-        
+
         //If this fly flashes AFTER the neighbour fly
         else if(robotNumber > neighbourFly.robotNumber) 
         {
