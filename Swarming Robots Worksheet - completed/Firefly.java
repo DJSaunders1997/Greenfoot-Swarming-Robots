@@ -4,7 +4,7 @@ public class Firefly extends FireflySuper
 {
     public Firefly()
     {                 
-         maxClockValue = 20;
+         maxClockValue = 12;
          currentClock = Greenfoot.getRandomNumber(12)+1;
     }
 
