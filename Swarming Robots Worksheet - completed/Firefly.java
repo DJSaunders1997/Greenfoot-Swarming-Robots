@@ -15,7 +15,7 @@ public class Firefly extends FireflySuper
         
         currentClock++;
         
-        if(currentClock >= maxClockValue)
+        if(currentClock > maxClockValue)
         {
             currentClock = 1;
             setImage("fireflyFlash.png"); 
