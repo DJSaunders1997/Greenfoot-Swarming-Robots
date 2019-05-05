@@ -7,3 +7,7 @@ Greenfoot projects also avaliable to view and download at https://www.greenfoot.
 Require the Greenfoot IDE to run projects avaliable to download at https://www.greenfoot.org/home.
 
 Note: Ignore GitHub the project code is written in Java not HTML. The Javadoc is HTML so it got confused.
+
+Help: If the projects launch, but cannot be viewed then edit the project file in notepad and change the last 2 lines to
+    xPosition=0
+    yPosition=0
