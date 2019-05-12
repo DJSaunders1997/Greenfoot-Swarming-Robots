@@ -61,16 +61,16 @@ public class BoidSuper extends SwarmRobot
     }
         
     /**
-     * Method seperation
+     * Method separation
      * Maintains distance between this boid and nearby neighbours.
      *
-     * @param seperationDistance the smaller radius a boid will look for seperations neighbours. 
+     * @param separationDistance the smaller radius a boid will look for separations neighbours. 
      * @return The heading needed to move away from other neighbours.
      */
-    public int seperation(int seperationDistance) 
+    public int separation(int separationDistance) 
     {
         List<BoidSuper> sepNeighbours;
-        sepNeighbours = getBoidNeighbours(seperationDistance);
+        sepNeighbours = getBoidNeighbours(separationDistance);
 
         if(sepNeighbours.size() != 0)
         {            

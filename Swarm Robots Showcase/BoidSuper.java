@@ -61,16 +61,16 @@ public class BoidSuper extends SwarmRobot
     }
         
     /**
-     * Method seperation
+     * Method separation
      * Maintains distance between this boid and nearby neighbours.
      *
-     * @param seperationDistance the smaller radius a boid will look for seperations neighbours. 
+     * @param separationDistance the smaller radius a boid will look for separations neighbours. 
      * @return The heading needed to move away from other neighbours.
      */
-    public int seperation(int seperationDistance) 
+    public int separation(int separationDistance) 
     {
         List<BoidSuper> sepNeighbours;
-        sepNeighbours = getBoidNeighbours(seperationDistance);
+        sepNeighbours = getBoidNeighbours(separationDistance);
 
         if(sepNeighbours.size() != 0)
         {            
@@ -132,7 +132,7 @@ public class BoidSuper extends SwarmRobot
 
     /**
      * Method cohesion
-     * Maintane cohesion of flock by attracting this boid to the "Centre Of Mass" of neighbours.
+     * Maintain cohesion of flock by attracting this boid to the "Centre Of Mass" of neighbours.
      *
      * @return The heading towards the centre of the neighbours.
      */
@@ -141,7 +141,7 @@ public class BoidSuper extends SwarmRobot
         //initilise x and y
         //x and y will be the "centre of mass" of the local boids
         int x = 0;
-        int y = 0 ;
+        int y = 0;
 
         //add the x and y coordinates of the neighbour boids
         for ( BoidSuper b: neighbours) 

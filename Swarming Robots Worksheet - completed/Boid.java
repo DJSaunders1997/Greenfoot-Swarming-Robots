@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.List;
 
 public class Boid extends BoidSuper
 {
@@ -13,7 +12,7 @@ public class Boid extends BoidSuper
 
         if (neighbours.size() != 0)
         {
-            int[] intArray = {cohesion(), alignment(), seperation(60)};
+            int[] intArray = {cohesion(), alignment(), separation(60)};
             int newHeading = averageOfAngles(intArray);
             turnSlightly(newHeading);
 

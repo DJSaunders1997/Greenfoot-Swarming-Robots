@@ -1,10 +1,10 @@
 #Greenfoot project file
 class.Boid.image=boid.png
 class.Firefly.image=firefly.png
-editor.fx.0.height=747
-editor.fx.0.width=818
-editor.fx.0.x=551
-editor.fx.0.y=94
+editor.fx.0.height=1048
+editor.fx.0.width=1938
+editor.fx.0.x=-9
+editor.fx.0.y=-9
 height=1048
 package.numDependencies=0
 package.numTargets=6
@@ -67,5 +67,5 @@ target6.y=0
 version=3.0.0
 width=1938
 world.lastInstantiated=MyWorld
-xPosition=0
-yPosition=0
+xPosition=-9
+yPosition=-9
